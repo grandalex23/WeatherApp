@@ -1,0 +1,36 @@
+@import "./reset.css";
+
+.header {
+  /* нельзя ставить иначи обрежеться
+  а без этого без на всю длину
+  width: 1920px;
+  height: 200px; */
+  background: #0a071d;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  padding: 40px 15px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.title {
+  font-family: "Impact";
+  font-size: 48px;
+  font-weight: 400;
+  font-style: normal;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.header-form {
+  border-radius: 8px;
+  width: 400px;
+  height: 36px;
+  background: #fff;
+  color: #fff;
+}
+
+.btn {
+  color: #fff;
+}
