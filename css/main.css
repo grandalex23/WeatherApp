@@ -23,7 +23,9 @@
   margin-bottom: 25px;
 }
 
-.header-form {
+.form {
+  display: flex;
+  justify-content: space-between;
   border-radius: 8px;
   width: 400px;
   height: 36px;
@@ -32,5 +34,32 @@
 }
 
 .btn {
+  border-radius: 8px;
+  width: 90px;
+  height: 36px;
+  background: #75c9d9;
   color: #fff;
+  font-family: "Rubik";
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 1;
+  color: #0a071d;
+
+  transition: background-color 0.2s ease-in;
+}
+
+.btn:hover {
+  background-color: #00d5ff;
+}
+
+.input {
+  /* гроу=1 для того чтобы инпут т.к. он во флексе занимал всю длину */
+  flex-grow: 1;
+  font-family: "Roboto";
+  font-weight: 400;
+  font-size: 20px;
+  /* типа относительно fsize размер */
+  line-height: 1;
+  color: #000000;
+  padding-left: 12px;
 }
