@@ -2,17 +2,23 @@
 
 html,
 body {
-  height: 100vh;
+  height: 100%;
 }
 
+/* body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
 .wrapper {
-  /* min-height: 100%; */
+  min-height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 .header {
-  /* нельзя ставить иначи обрежеться
+  /* нельзя ставить иначи обрежется
   а без этого без на всю длину
   width: 1920px;
   height: 200px; */
@@ -75,7 +81,10 @@ body {
   padding-left: 12px;
 }
 
-.container {
+.main {
+  /* для прибития футтера книзу */
+  flex-grow: 1;
+
   background-color: #0A071D;
   display: flex;
   flex-direction: column;
@@ -209,7 +218,7 @@ body {
 }
 
 .footer {
-  /* margin-top: auto; */
+  margin-top: auto;
   padding: 26px 30px;
 
   width: 100%;
