@@ -1,5 +1,16 @@
 @import "./reset.css";
 
+html,
+body {
+  height: 100vh;
+}
+
+.wrapper {
+  /* min-height: 100%; */
+  display: flex;
+  flex-direction: column;
+}
+
 .header {
   /* нельзя ставить иначи обрежеться
   а без этого без на всю длину
@@ -62,4 +73,159 @@
   line-height: 1;
   color: #000000;
   padding-left: 12px;
+}
+
+.container {
+  background-color: #0A071D;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+}
+
+/* card */
+
+.card {
+  background-color: #fff;
+  width: 480px;
+  background-image: url("../img/figure1.svg");
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain;
+  /* background-size: 480px 240px; */
+  border-radius: 8px;
+
+  margin-bottom: 220px;
+}
+
+.card-top {
+  padding: 25px;
+  font-family: "Rubik";
+  font-weight: 400;
+  font-size: 14px;
+  width: 480px;
+  height: 235px;
+  color: #fff;
+
+}
+
+.card-top__text {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+.card-city {
+  min-width: auto;
+  /* max-width: fit-content; */
+  /* width: 134px; */
+  height: 70px;
+  padding: 0 4%;
+  border-radius: 8px;
+  background-color: #8C82CA;
+  font-family: "Rubik";
+  font-weight: 700;
+  font-size: 36px;
+  color: #fff;
+  text-align: center;
+  align-content: center;
+
+}
+
+.card-degree {
+  font-family: "Rubik";
+  font-weight: 700;
+  font-size: 68px;
+  line-height: 68px;
+}
+
+.pic-main {
+  width: 63px;
+  height: 59px;
+  /* display: block; */
+  /* margin-bottom: 7px; */
+}
+
+.pic-main__text {
+  font-family: "Rubik";
+  font-weight: 400;
+  font-size: 24px;
+  color: #fff;
+  margin-top: -5px;
+}
+
+.card-bottom {
+  /* display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  text-align: center; */
+  padding: 30px 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px 60px;
+}
+
+.indicator {
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 10px;
+}
+
+.indicator-text {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.pic-cloud {
+  width: 36px;
+  height: 36px;
+}
+
+.pic-pressure {
+  width: 36px;
+  height: 36px;
+}
+
+.pic-uvindex {
+  width: 36px;
+  height: 36px;
+}
+
+.pic-humidity {
+  width: 36px;
+  height: 36px;
+}
+
+.pic-visibility {
+  width: 36px;
+  height: 36px;
+}
+
+.pic-wind {
+  width: 36px;
+  height: 36px;
+}
+
+.footer {
+  /* margin-top: auto; */
+  padding: 26px 30px;
+
+  width: 100%;
+  height: 80px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  background: #2f2047;
+
+  font-family: "Rubik";
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 1;
+  color: #fff;
+  text-align: center;
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
 }
