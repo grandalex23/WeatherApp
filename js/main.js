@@ -3,7 +3,8 @@ const apiKey = 'f193b0e912b54dca8cf191821240806';
 /* Получаем название элементов например: Города */
 // Слушаем форму с городом. form и input у нас един. в названии класса
 // поэтому используем класс но можно добавить id и слушать по #
-const header = document.querySelector('.header')
+//const header = document.querySelector('.header')
+const main = document.querySelector('.main')
 const form = document.querySelector('form');
 const input = document.querySelector('input')
 
@@ -22,26 +23,33 @@ form.onsubmit = function (event) {
   //сам запрос
   fetch(url).then((response) => {
     return response.json()
-  }).then((data) => {
-    console.log(data);
+  })
+    .then((data) => {
 
-    console.log(data.current.last_updated);
-    // Имя города
-    console.log(data.location.name);
-    console.log(data.current.temp_c);
-    console.log(data.current.condition.text);
-    console.log(data.current.cloud);
-    console.log(data.current.pressure_in);
-    console.log(data.current.uv);
-    console.log(data.current.humidity);
-    console.log(data.current.vis_km);
-    console.log(data.current.wind_kph);
+      //проверка на ошибку в вназвании города
+      if (data.error) {
+        // если есть ошибка - выводим ее
+        // но сначала удаляем предыдущую карточку. Это делается до вставки нужной карточки
+        const prevCard = document.querySelector('.card')
+        if (prevCard) prevCard.remove();
+        // показывае карточку с ошибкой
+        const html = `<div class="cardError">${data.error.message}</div>`
 
+        //Отобраем карточку на странице после (afterBegin) main
+        //header.insertAdjacentHTML('afterBegin', html)
+        main.insertAdjacentHTML('afterBegin', html)
 
-    /* отображаем полученное в карточке */
-    //Разметка карточки
+      } else {
+        // если ошибки нет - выводим карточку
 
-    const html = `<div class="card">
+        /* отображаем полученное в карточке */
+
+        //удаляем предыдущую карточку. Это делается до вставки нужной карточки
+        const prevCard = document.querySelector('.card')
+        if (prevCard) prevCard.remove();
+
+        //Разметка карточки
+        const html = `<div div class="card" >
         <div class="card-top">
           <div class="card-top__text">
             <div> Weather today in </div>
@@ -98,13 +106,33 @@ form.onsubmit = function (event) {
             </div>
           </div>
         </div>
-      </div>`;
+      </div >`;
 
-    //Отобраем карточку на странице после header
+        //Отобраем карточку на странице после (afterBegin) main
 
-    header.insertAdjacentHTML('afterend', html)
+        //header.insertAdjacentHTML('afterBegin', html)
+        main.insertAdjacentHTML('afterBegin', html)
+      }
 
-  })
+
+      // вывод даннных в кончоль для поиска нужных ключей
+      console.log(data);
+      console.log(data.current.last_updated);
+      // Имя города
+      console.log(data.location.name);
+      console.log(data.current.temp_c);
+      console.log(data.current.condition.text);
+      console.log(data.current.cloud);
+      console.log(data.current.pressure_in);
+      console.log(data.current.uv);
+      console.log(data.current.humidity);
+      console.log(data.current.vis_km);
+      console.log(data.current.wind_kph);
+
+
+
+
+    })
 }
 
 

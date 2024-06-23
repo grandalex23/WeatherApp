@@ -18,7 +18,7 @@ body {
 }
 
 .header {
-  /* нельзя ставить иначи обрежется
+  /* нельзя ставить иначе обрежется
   а без этого без на всю длину
   width: 1920px;
   height: 200px; */
@@ -107,6 +107,20 @@ body {
   margin-bottom: 220px;
 }
 
+.cardError {
+  background-color: #fff;
+  width: 480px;
+  /* background-image: url("../img/figure1.svg"); */
+  /* background-repeat: no-repeat;
+  background-position: center top;
+  background-size: contain; */
+  /* background-size: 480px 240px; */
+  border-radius: 8px;
+  text-align: center;
+
+  margin-bottom: 220px;
+}
+
 .card-top {
   padding: 25px;
   font-family: "Rubik";
@@ -120,9 +134,10 @@ body {
 
 .card-top__text {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-
+  grid-template-columns: 200px 1fr 1fr;
   align-items: center;
+  justify-items: start;
+
   margin-bottom: 10px;
 }
 
